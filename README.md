@@ -1,8 +1,8 @@
 # Simuladores de CLPs Industriais em Go (Siemens S7 & Rockwell EtherNet/IP)
 
 Este repositório contém simuladores de CLP desenvolvidos em **Go puro**, implementando diretamente os protocolos industriais:
-- **Siemens S7comm** (ISO-on-TCP / TPKT / COTP / S7 PDU) - Porta `102`
-- **Rockwell / Allen-Bradley EtherNet/IP** (CIP / Unconnected Send / Tag Addressing) - Porta `44818`
+- **Siemens S7comm** (ISO-on-TCP / TPKT / COTP / S7 PDU) - 192.168.1.50 Porta `102`
+- **Rockwell / Allen-Bradley EtherNet/IP** (CIP / Unconnected Send / Tag Addressing) - 192.168.1.51 Porta `44818`
 
 Compatível com execução local (Windows/Linux), containers Docker e sistemas embarcados ARM (ex: **Advantech ECU-1051**).
 
