@@ -1,0 +1,32 @@
+# Cada simulador roda em um container com IP fixo na rede "clps".
+# Portas também são publicadas no host (127.0.0.1) para acesso no Windows/Docker Desktop.
+services:
+  siemens:
+    build: .
+    environment:
+      SIMULADORES: s7
+      S7_IP: 0.0.0.0
+      S7_PORT: "102"
+    ports:
+      - "127.0.0.1:102:102"
+    networks:
+      clps:
+        ipv4_address: 172.28.0.10
+
+  rockwell:
+    build: .
+    environment:
+      SIMULADORES: rockwell
+      ENIP_IP: 0.0.0.0
+      ENIP_PORT: "44818"
+    ports:
+      - "127.0.0.2:44818:44818"
+    networks:
+      clps:
+        ipv4_address: 172.28.0.11
+
+networks:
+  clps:
+    ipam:
+      config:
+        - subnet: 172.28.0.0/24
